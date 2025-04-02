@@ -63,7 +63,7 @@ class NCycle<T> {
   }
   printAll() {
     if(Array.isArray(this.make) && Array.isArray(this.model)){
-      const shorter: T | T[] = this.make.length < this.model.length ? this.make : this.model
+      const shorter: T[] = this.make.length < this.model.length ? this.make : this.model
       for(let i:number = 0; i < shorter.length; i++) {
         console.log(`This NCycle has a ${this.make} ${this.model} at ${i}.`)
       }
@@ -121,4 +121,4 @@ const add = (x: number, y: number): number => x + y
 
 add(testCycle1.make, testCycle5.model[1]);
 // Error expected here
-add(testCycle2.make, testCycle4.model[1]);
+// add(testCycle2.make, testCycle4.model[1]);
