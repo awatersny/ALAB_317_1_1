@@ -2,11 +2,11 @@
 
 class Vehicle<T> {
   status: string = "stopped";
-  make: T
-  model: T
-  wheels: string | number
+  make: string
+  model: string
+  wheels: number
 
-  constructor(make: T, model: T, wheels: string | number) {
+  constructor(make: string, model: string, wheels: number) {
     this.make = make;
     this.model = model;
     this.wheels = wheels;
@@ -20,13 +20,13 @@ class Vehicle<T> {
 }
 
 class Car<T> extends Vehicle<T> {
-  constructor(make: T, model: T) {
-    super(make, model, "four");
+  constructor(make: string, model: string) {
+    super(make, model, 4);
   }
 }
 
 class MotorCycle<T> extends Vehicle<T> {
-  constructor(make: T, model: T) {
+  constructor(make: string, model: string) {
     super(make, model, 2);
   }
 }
@@ -47,4 +47,4 @@ console.log(myHarley.make.toUpperCase());
 const myBuick = new Car<string>("Buick", "Regal");
 myBuick.wheels = myBuick.wheels - 1;
 console.log(myBuick.wheels);
-console.log(myBuick.mdl);
+console.log(myBuick.model);
