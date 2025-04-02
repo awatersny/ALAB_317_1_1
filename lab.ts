@@ -31,6 +31,36 @@ class MotorCycle<T> extends Vehicle<T> {
   }
 }
 
+class NCycle<T> {
+  status: string = "stopped";
+  make: string | string[]
+  model: string | string[]
+  wheels: number
+
+  constructor(make: string | string[], model: string | string[], wheels: number) {
+    this.make = make;
+    this.model = model;
+    this.wheels = wheels;
+  }
+  start() {
+    this.status = "started";
+  }
+  stop() {
+    this.status = "stopped";
+  }
+  print(index: number = 0) {
+    if(typeof this.make === "string" && typeof this.model === "string"){
+      console.log(`"This is a ${this.make} ${this.model} NCycle."`)
+    } 
+    else if(this.make.length > index && this.model.length > index){
+      console.log(`"This NCycle has a ${this.make} ${this.model} at ${index}."`)
+    } 
+    else {
+      console.log("This NCycle was not created properly.")
+    }
+  }
+}
+
 function printStatus(vehicle: Vehicle<string | number>) {
   if (vehicle.status === "running") {
     console.log("The vehicle is running.");
