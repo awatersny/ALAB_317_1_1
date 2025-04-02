@@ -100,6 +100,6 @@ testCycle5.printAll();
 function add(x, y) {
     return x + y;
 }
-// add(testCycle1.make, testCycle5.model[1]);
-// // Error expected here
-// add(testCycle2.make, testCycle4.model[1]);
+add(testCycle1.make, testCycle5.model[1]);
+// Error expected here
+add(testCycle2.make, testCycle4.model[1]);

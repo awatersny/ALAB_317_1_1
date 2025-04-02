@@ -33,11 +33,11 @@ class MotorCycle<T> extends Vehicle<T> {
 
 class NCycle<T> {
   status: string = "stopped";
-  make: T | T[]
-  model: T | T[]
+  make: T
+  model: T
   wheels: number
 
-  constructor(make: T | T[], model: T | T[], wheels: number) {
+  constructor(make: T, model: T, wheels: number) {
     this.make = make;
     this.model = model;
     this.wheels = wheels;
@@ -117,9 +117,8 @@ const testCycle5 = new NCycle<number[]>(makes5, models5, 0);
 testCycle5.print(7);
 testCycle5.printAll();
 
-function add(x: number, y: number): number {
-  return x + y;
-}
-// add(testCycle1.make, testCycle5.model[1]);
-// // Error expected here
-// add(testCycle2.make, testCycle4.model[1]);
+const add = (x: number, y: number): number => x + y
+
+add(testCycle1.make, testCycle5.model[1]);
+// Error expected here
+add(testCycle2.make, testCycle4.model[1]);
