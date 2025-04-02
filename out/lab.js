@@ -39,7 +39,7 @@ class NCycle {
     print(index = 0) {
         if (Array.isArray(this.make) && Array.isArray(this.model)) {
             if (this.make.length > index && this.model.length > index) {
-                console.log(`This NCycle has a ${this.make} ${this.model} at ${index}.`);
+                console.log(`This NCycle has a ${this.make[index]} ${this.model[index]} at ${index}.`);
             }
             else {
                 console.log("This NCycle was not created properly.");
@@ -53,7 +53,7 @@ class NCycle {
         if (Array.isArray(this.make) && Array.isArray(this.model)) {
             const shorter = this.make.length < this.model.length ? this.make : this.model;
             for (let i = 0; i < shorter.length; i++) {
-                console.log(`This NCycle has a ${this.make} ${this.model} at ${i}.`);
+                console.log(`This NCycle has a ${this.make[i]} ${this.model[i]} at ${i}.`);
             }
         }
         else {
